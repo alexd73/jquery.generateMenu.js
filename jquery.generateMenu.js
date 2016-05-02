@@ -6,7 +6,7 @@
 	/**
 	 * Плагин необходимо навешивать на пустой элемент <ul>, в нем будут сгенерированы ссылки.
 	 * Пример вызова:
-	 * 	$("#navbar ui.nav).generateMenu();
+	 * 	$("ui.main-menu).generateMenu();
 	 * @returns {boolean}
      */
     $.fn.generateMenu = function() {
