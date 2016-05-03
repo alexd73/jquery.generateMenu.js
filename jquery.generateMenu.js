@@ -14,23 +14,30 @@
 		// Создаём настройки по-умолчанию, расширяя их с помощью параметров, которые были переданы
 		var options = $.extend( {
 			"defSection": "section",
-			"liClasses": ""
-		}, options);
+			"liClasses": "",
+			"aClasses": ""
+	}, options);
 
-		t = this;
+		ul = this;
 		$(options.defSection).each( function(index, element) {
-			console.log( "id:", $(element).attr("id"));
 			var linkText = $(element).data("linkText");
 			var href = element.id;
+			/**
+			 * TODO: Добавить проверку на присутсвие ID
+			 *
+			 * TODO: Добавить добавление классов с проверкой на существование переменной.
+             */
 			item = "";
 			if (typeof linkText != 'undefined') {
 				item = "<li><a href=\"#" + href + "\">" + linkText + "</a></li>";
-				t.append(item);
+				ul.append(item);
 				console.log(linkText)
 			} else {
 				console.log("no link text")
 			}
 		});
+
+
         return true;
     };
 })( jQuery );
