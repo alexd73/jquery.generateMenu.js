@@ -21,7 +21,7 @@
 			var linkText = $(element).data("linkText");
 			var href = element.id;
 			item = "";
-			if ((typeof linkText != 'undefined') & (typeof href != 'undefined')) {
+			if ((typeof linkText != 'undefined') & (href != '')) {
 				item = "<li><a href=\"#" + href + "\">" + linkText + "</a></li>";
 				ul.append(item);
 				console.log(linkText)
