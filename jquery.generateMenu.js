@@ -1,6 +1,4 @@
-/**
- * Created by alexey on 02.05.16.
- */
+
 
 (function( $ ){
 	/**
@@ -22,22 +20,18 @@
 		$(options.defSection).each( function(index, element) {
 			var linkText = $(element).data("linkText");
 			var href = element.id;
-			/**
-			 * TODO: Добавить проверку на присутсвие ID
-			 *
-			 * TODO: Добавить добавление классов с проверкой на существование переменной.
-             */
 			item = "";
-			if (typeof linkText != 'undefined') {
+			if ((typeof linkText != 'undefined') & (typeof href != 'undefined')) {
 				item = "<li><a href=\"#" + href + "\">" + linkText + "</a></li>";
 				ul.append(item);
 				console.log(linkText)
 			} else {
-				console.log("no link text")
+				console.log("no link text or ID")
 			}
 		});
-
+		$(this.selector + ">li").addClass(options.liClasses);
+		$(this.selector + ">li>a").addClass(options.aClasses);
 
         return true;
     };
-})( jQuery );
+})(jQuery);
